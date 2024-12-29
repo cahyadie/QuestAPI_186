@@ -7,7 +7,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
 interface AppContainer {
-    val mahasiswaRepository: MahasiswaRepository
+    val kontakRepository: MahasiswaRepository
 }
 
 class MahasiswaContainer: AppContainer {
@@ -18,6 +18,6 @@ class MahasiswaContainer: AppContainer {
         .baseUrl(baseUrl).build()
 
     private val mahasiswaService: MahasiswaService by lazy {retrofit.create(MahasiswaService::class.java)}
-    override val mahasiswaRepository: MahasiswaRepository by lazy {NetworkMahasiswaRepository(mahasiswaService)}
+    override val kontakRepository: MahasiswaRepository by lazy {NetworkMahasiswaRepository(mahasiswaService)}
 
 }
