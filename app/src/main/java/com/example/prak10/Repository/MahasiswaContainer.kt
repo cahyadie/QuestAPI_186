@@ -11,7 +11,7 @@ interface AppContainer {
 }
 
 class MahasiswaContainer: AppContainer {
-    private val baseUrl = "http:/10.0.2.2:8080/umyTI/"
+    private val baseUrl = "http://192.168.1.15/umyTI/"
     private val json = Json { ignoreUnknownKeys = true }
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
@@ -21,3 +21,5 @@ class MahasiswaContainer: AppContainer {
     override val mahasiswaRepository: MahasiswaRepository by lazy {NetworkMahasiswaRepository(mahasiswaService)}
 
 }
+
+
